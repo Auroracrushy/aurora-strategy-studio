@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mojisola Abegunde – Go-to-Market & Product Marketing</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f2f5f9;--surface:#fff;--ink:#14213d;--muted:#55627a;--line:#d9e0ea;--a:#0b7f86;--a2:#6a4bb8;--chip:#e6f1f3;--onA:#fff;
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1524;--surface:#152036;--ink:#e8edf6;--muted:#9aa8c1;--line:#273550;--a:#4fd1c5;--a2:#b39cff;--chip:#1a2c3f;--onA:#0d1524;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d1524;--surface:#152036;--ink:#e8edf6;--muted:#9aa8c1;--line:#273550;--a:#4fd1c5;--a2:#b39cff;--chip:#1a2c3f;--onA:#0d1524;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 16px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 "Instrument Sans",system-ui,sans-serif}
+a{color:var(--a)}
+:focus-visible{outline:3px solid var(--a2);outline-offset:2px;border-radius:4px}
+.wrap{display:grid;grid-template-columns:300px 1fr;gap:56px;max-width:1120px;margin:0 auto;padding:48px 24px}
+aside{position:sticky;top:32px;align-self:start}
+.name{font:800 clamp(2.2rem,4vw,3rem)/1 "Bricolage Grotesque",sans-serif;margin:0 0 12px;letter-spacing:-.03em}
+.role{color:var(--muted);margin:0 0 20px}
+.aurora{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--a),var(--a2));margin-bottom:20px}
+.contact{display:grid;gap:8px;margin-bottom:20px}
+.btn{display:flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);text-decoration:none;font:500 .95rem "Instrument Sans",sans-serif;cursor:pointer;width:100%;text-align:left}
+.btn:hover{border-color:var(--a)}
+.btn.main{background:var(--a);color:var(--onA);border-color:var(--a)}
+nav{display:grid;gap:2px;margin-top:8px}
+nav a{padding:6px 10px;border-left:3px solid var(--line);text-decoration:none;color:var(--muted);font-weight:500}
+nav a.on{border-color:var(--a);color:var(--ink)}
+.theme{margin-top:16px;width:auto}
+section{margin-bottom:56px}
+h2{font:700 1.6rem/1.2 "Bricolage Grotesque",sans-serif;margin:0 0 16px;letter-spacing:-.02em}
+.lead{font-size:1.1rem;max-width:68ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:0;list-style:none}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:5px 13px;border-radius:99px;font:500 .9rem "Instrument Sans",sans-serif;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--a);border-color:var(--a);color:var(--onA)}
+.tag{background:var(--chip);padding:4px 11px;border-radius:99px;font-size:.88rem}
+.job{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden}
+.job[hidden]{display:none}
+.job summary{padding:18px 20px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.job summary::-webkit-details-marker{display:none}
+.job h3{font:700 1.15rem/1.3 "Bricolage Grotesque",sans-serif;margin:0}
+.meta{color:var(--muted);font-size:.92rem;margin:2px 0 0}
+.when{white-space:nowrap;color:var(--a);font-weight:600;font-size:.92rem}
+.job summary::after{content:"+";font:600 1.4rem/1 "Instrument Sans";color:var(--a);margin-left:4px}
+.job[open] summary::after{content:"–"}
+.body{padding:0 20px 20px}
+.tabs{display:flex;gap:6px;margin-bottom:12px}
+.tab{border:0;background:none;padding:6px 2px;margin-right:12px;font:600 .95rem "Instrument Sans";color:var(--muted);border-bottom:2px solid transparent;cursor:pointer}
+.tab[aria-selected="true"]{color:var(--ink);border-color:var(--a)}
+.body ul{margin:0;padding-left:20px}
+.body li{margin-bottom:8px;max-width:75ch}
+.panel[hidden]{display:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.proj{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--a2);border-radius:8px;padding:14px 16px}
+.proj h3{font:700 1rem "Bricolage Grotesque";margin:0 0 6px}
+.proj p{margin:0;color:var(--muted);font-size:.95rem}
+.tools{font-size:.95rem;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+@media (max-width:860px){.wrap{grid-template-columns:1fr;gap:32px;padding:28px 18px}aside{position:static}nav{display:none}.job summary{flex-direction:column;gap:4px}.job summary::after{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.toast{transition:none}}
+@media print{aside nav,.theme,.chips,.tabs{display:none}.panel[hidden]{display:block}.job .body{display:block}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <h1 class="name">Mojisola Abegunde</h1>
+  <p class="role">Go-to-market strategy, product marketing and AI & SaaS growth</p>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="contact">
+    <a class="btn main" href="https://www.linkedin.com/in/mojisola-abegunde-753a76b2/" target="_blank" rel="noopener">LinkedIn profile</a>
+    <a class="btn" href="https://auroracrushy.github.io/aurora-strategy-studio/" target="_blank" rel="noopener">Portfolio: Aurora Strategy Studio</a>
+    <a class="btn" href="mailto:mojisola.abegunde@gmail.com">mojisola.abegunde@gmail.com</a>
+    <a class="btn" href="tel:+2348142421122">08142421122</a>
+    <button class="btn" id="copy" type="button">Copy email address</button>
+  </div>
+  <nav aria-label="Sections">
+    <a href="#about">Summary</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills & tools</a><a href="#education">Education</a>
+  </nav>
+  <button class="btn theme" id="theme" type="button">Switch light / dark</button>
+</aside>
+<main>
+<section id="about">
+  <h2>Summary</h2>
+  <p class="lead">Marketing and go-to-market professional with 10+ years across brand communications, content strategy, digital marketing, product messaging, campaign development and audience growth.</p>
+  <p class="lead">I shape market positioning and launch strategies for AI and SaaS products, translate technical capabilities into clear customer value, and build integrated programmes across content, social, email, community and demand generation. I combine strategic planning with hands-on execution: GTM planning, product marketing, lead nurturing, marketing automation, customer journeys, SEO/AEO and AI-assisted workflows.</p>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <ul class="chips" aria-label="Filter experience">
+    <li><button class="chip" data-f="all" aria-pressed="true">All roles</button></li>
+    <li><button class="chip" data-f="gtm" aria-pressed="false">GTM & product</button></li>
+    <li><button class="chip" data-f="content" aria-pressed="false">Content & social</button></li>
+    <li><button class="chip" data-f="saas" aria-pressed="false">SaaS & UX</button></li>
+    <li><button class="chip" data-f="nonprofit" aria-pressed="false">Non-profit</button></li>
+  </ul>
+
+  <details class="job" data-t="gtm saas" open>
+    <summary><div><h3>Go-to-Market Manager / Marketing Lead, AURÄI</h3><p class="meta">CyberOps AI Dynamics (C-AID) · Contract · AI Governance, Audit Intelligence, GRC Learning & AI Agents</p></div><span class="when">June 2026 – November 2026</span></summary>
+    <div class="body">
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-p="r">Responsibilities</button>
+        <button class="tab" role="tab" aria-selected="false" data-p="c">Selected contributions</button>
+      </div>
+      <div class="panel" data-k="r"><ul>
+        <li>Led go-to-market planning and marketing execution for AURÄI, an AI Audit Intelligence, Governance, Risk and Compliance learning and agent platform.</li>
+        <li>Developed product positioning, messaging, audience segmentation and value propositions across learning, practitioner, enterprise and partnership journeys.</li>
+        <li>Built launch strategy and integrated campaigns across LinkedIn, Instagram, TikTok, X, email, webinars, community engagement and paid media.</li>
+        <li>Developed launch assets and content systems: landing-page copy, lead magnets, articles, carousels, video scripts, email sequences and campaign messaging.</li>
+        <li>Designed lead-generation and nurture journeys, including AI/Agent Discovery content, early-access campaigns, HubSpot email sequences and conversion-focused CTAs.</li>
+        <li>Coordinated marketing readiness across pricing and offer messaging, Stripe product and coupon configuration, subscription/token usage messaging, and entitlement/pricing documentation.</li>
+        <li>Planned audience growth and engagement, influencer/community outreach, event activation and pre-, during- and post-launch communications.</li>
+        <li>Translated AI governance and GRC concepts into accessible, customer-focused messaging and educational content.</li>
+      </ul></div>
+      <div class="panel" data-k="c" hidden><ul>
+        <li>Built the GTM and launch marketing framework for a new AI-focused product, aligning positioning, audience journeys, messaging, content, channels and conversion objectives.</li>
+        <li>Developed segmented journeys and messaging for career learners, GRC practitioners, enterprise audiences and prospective partners.</li>
+        <li>Created an AI/Agent Discovery lead magnet and supporting nurture sequence introducing prospects to AI visibility, governance and risk concerns.</li>
+        <li>Established a LinkedIn-first content strategy with cross-platform repurposing and launch content workflows.</li>
+        <li>Prepared launch and event plans, including paid-media strategy, influencer/community engagement and ISACA Lagos Convention activation concepts.</li>
+        <li>Supported commercial launch readiness through pricing/offers documentation, Stripe configuration coordination and product entitlement messaging.</li>
+      </ul></div>
+    </div>
+  </details>
+
+  <details class="job" data-t="content">
+    <summary><div><h3>Social Media Manager & Content Strategist, Pawnshop by Bluradish</h3><p class="meta">Luxury Asset Management, Luxury Watches & High-Value Lending</p></div><span class="when">2023 – 2026</span></summary>
+    <div class="body"><ul>
+      <li>Developed and executed social media strategies across Instagram, X, Snapchat and the company website.</li>
+      <li>Created educational, promotional and engagement-focused content, including luxury lifestyle and financial content for high-net-worth individuals.</li>
+      <li>Managed content calendars and oversee full campaign execution cycles.</li>
+      <li>Wrote SEO-optimised website articles, AEO content and long-form brand features.</li>
+      <li>Created multi-platform strategies balancing awareness, engagement and conversion, and storytelling campaigns for luxury watch financing portfolios.</li>
+      <li>Supported the repositioning from a traditional pawnshop to a luxury financial and advisory brand.</li>
+      <li>Produced SEO and AEO content to improve search visibility and qualified lead acquisition.</li>
+    </ul></div>
+  </details>
+
+  <details class="job" data-t="saas content">
+    <summary><div><h3>Digital Content & Marketing Consultant, Value Driver Technology Solutions</h3><p class="meta">Enterprise SaaS & Technology</p></div><span class="when">2023 – Present</span></summary>
+    <div class="body"><ul>
+      <li>Develop UX and website content for enterprise software platforms, including CRM, HRM and procurement.</li>
+      <li>Create product marketing content, newsletters, thought leadership and customer education materials.</li>
+      <li>Build content frameworks and messaging for Visitor Management and Incident Management software.</li>
+      <li>Created 18+ conversion-focused web pages for a complete CRM platform launch.</li>
+      <li>Developed newsletter structure, templates and communication systems for engagement and retention.</li>
+      <li>Built reusable content templates across multiple SaaS product lines.</li>
+    </ul></div>
+  </details>
+
+  <details class="job" data-t="nonprofit">
+    <summary><div><h3>Programmes Manager & Public Relations Manager, ADOLFRIC</h3><p class="meta">Adolescent Friendly Research Initiative & Care · Non-Profit / Youth Development</p></div><span class="when">4 years</span></summary>
+    <div class="body"><ul>
+      <li>Managed organisational communications and public relations activities.</li>
+      <li>Coordinated stakeholder engagement programmes and donor communications.</li>
+      <li>Developed advocacy campaigns and community awareness initiatives.</li>
+      <li>Led public engagement, media relations and partner outreach.</li>
+      <li>Improved organisational visibility through multi-channel campaigns and strengthened relationships with partners, donors and community stakeholders.</li>
+    </ul></div>
+  </details>
+
+  <details class="job" data-t="content saas">
+    <summary><div><h3>Freelance Content Writer & Digital Marketing Specialist</h3><p class="meta">Independent Practice · Multiple Industries</p></div><span class="when">2016 – Present</span></summary>
+    <div class="body"><ul>
+      <li>Delivered content marketing, SEO writing, website copy, email campaigns, brand storytelling, social media content and newsletter development.</li>
+      <li>Worked across technology and SaaS, luxury goods and finance, non-profit, education and parenting, and lifestyle and wellness.</li>
+    </ul></div>
+  </details>
+</section>
+
+<section id="projects">
+  <h2>Selected projects</h2>
+  <div class="grid">
+    <div class="proj"><h3>Value CRM website</h3><p>Conversion-focused website content, product pages, feature pages, UX copy and messaging for a complete CRM platform.</p></div>
+    <div class="proj"><h3>Newsletter development programme</h3><p>Newsletter templates and customer communication systems focused on product education and retention.</p></div>
+    <div class="proj"><h3>Thrive Network content initiative</h3><p>Educational content on parenting, financial literacy and gender equality; contributed to publication development.</p></div>
+    <div class="proj"><h3>Luxury watch marketing</h3><p>Content strategies and SEO/AEO articles for luxury watches and asset-backed financing.</p></div>
+    <div class="proj"><h3>UNGEI gender equality project</h3><p>My project on teen mothers’ right to stay in school, with the extra support they need, was one of three selected in Nigeria from submissions invited by the United Nations Girls’ Education Initiative (UNGEI). <a href="https://auroracrushy.github.io/aurora-strategy-studio/" target="_blank" rel="noopener">See it in my portfolio</a></p></div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills & tools</h2>
+  <ul class="chips" style="margin-bottom:20px">
+    <li class="tag">Go-to-market strategy</li><li class="tag">Product marketing</li><li class="tag">AI & SaaS marketing</li><li class="tag">Brand positioning</li><li class="tag">Content strategy</li><li class="tag">Digital communications</li><li class="tag">Email marketing</li><li class="tag">SEO/AEO</li><li class="tag">UX writing</li><li class="tag">Campaign management</li><li class="tag">Community building</li><li class="tag">Marketing automation</li>
+  </ul>
+  <p class="tools"><strong style="color:var(--ink)">Tools:</strong> Canva Pro, Mailchimp, HubSpot, WordPress, Meta Business Suite, LinkedIn Campaign Manager, Adobe Express, CapCut, Google Workspace, Microsoft 365, ChatGPT, Claude, Gemini, Perplexity, Midjourney, DALL·E, Leonardo AI, Notion AI, Copy.ai, Jasper AI, Grammarly AI.</p>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <p class="lead">Obafemi Awolowo University · Bachelor’s degree in English Literature · 2014</p>
+</section>
+</main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(function(){
+var root=document.documentElement;
+try{var s=localStorage.getItem("theme");if(s)root.setAttribute("data-theme",s)}catch(e){}
+document.getElementById("theme").addEventListener("click",function(){
+  var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme:dark)").matches);
+  var n=dark?"light":"dark";root.setAttribute("data-theme",n);
+  try{localStorage.setItem("theme",n)}catch(e){}
+});
+var jobs=document.querySelectorAll(".job");
+document.querySelectorAll(".chip").forEach(function(c){c.addEventListener("click",function(){
+  document.querySelectorAll(".chip").forEach(function(x){x.setAttribute("aria-pressed",x===c)});
+  var f=c.dataset.f;
+  jobs.forEach(function(j){j.hidden=!(f==="all"||j.dataset.t.split(" ").indexOf(f)>-1)});
+})});
+document.querySelectorAll(".tab").forEach(function(t){t.addEventListener("click",function(){
+  var b=t.closest(".body");
+  b.querySelectorAll(".tab").forEach(function(x){x.setAttribute("aria-selected",x===t)});
+  b.querySelectorAll(".panel").forEach(function(p){p.hidden=p.dataset.k!==t.dataset.p});
+})});
+var toast=document.getElementById("toast");
+document.getElementById("copy").addEventListener("click",function(){
+  var m="mojisola.abegunde@gmail.com",ok=function(){toast.textContent="Email address copied";toast.classList.add("show");setTimeout(function(){toast.classList.remove("show")},1800)};
+  try{navigator.clipboard.writeText(m).then(ok,function(){})}catch(e){}
+});
+var links=document.querySelectorAll("nav a");
+if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle("on",l.getAttribute("href")==="#"+e.target.id)})}})},{rootMargin:"-30% 0px -60% 0px"});
+  document.querySelectorAll("main section").forEach(function(s){io.observe(s)});
+}
+})();
+</script>
+</body>
+</html>
